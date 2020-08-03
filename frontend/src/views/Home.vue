@@ -1,122 +1,119 @@
 <template>
   <div>
-    <form @submit.prevent="addMessage" class="mb-3">
-      <div v-if="error" class="alert alert-dismissible alert-warning">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <h4 class="alert-heading">Error!</h4>
-        <p class="mb-0">{{error}}</p>
-      </div>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          v-model="message.username"
-          type="text"
-          class="form-control"
-          id="username" required>
-      </div>
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input
-          v-model="message.subject"
-          type="text"
-          class="form-control"
-          id="subject"
-          placeholder="Enter a subject" required>
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea
-          v-model="message.message"
-          class="form-control"
-          id="message"
-          rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="imageURL">Image URL</label>
-        <input
-          v-model="message.imageURL"
-          type="url"
-          class="form-control"
-          id="imageURL"
-          placeholder="Enter URL to an image">
-      </div>
-      <button type="submit" class="btn btn-primary">Add Message</button>
-    </form>
-    <div class="list-unstyled" v-for="message in reversedMessages" :key="message._id">
-      <li class="media">
-        <img v-if="message.imageURL" class="mr-3" :src="message.imageURL" :alt="message.subject">
-        <div class="media-body">
-          <h4 class="mt-0 mb-1">{{message.username}}</h4>
-          <h5 class="mt-0 mb-1">{{message.subject}}</h5>
-          {{message.message}}
-          <br />
-          <small>{{message.created}}</small>
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column is-12">
+          <div class="container content">
+            <i class="is-large fab fa-discord"></i>
+            <i class="is-large fas fa-code"></i>
+            <h1 class="title">Code <em>All</em> The Things</h1>
+            <h3 class="subtitle">
+              Collection of code goodies for next-level dev
+            </h3>
+            <a href="https://github.com/BulmaTemplates/bulma-templates" target="_blank"
+               class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+              <span>Github</span>
+            </a>
+          </div>
         </div>
-      </li>
-      <hr>
+      </div>
     </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-3">
+          <aside class="is-medium menu">
+            <p class="menu-label">
+              categories
+            </p>
+            <ul class="menu-list">
+              <li class="is-right"><a href="#const" class="is-active"><i
+                class="fab fa-css3-alt"></i> CSS</a></li>
+              <li><a href="#let" class="is-active"><i class="fab fa-js"></i> JS</a></li>
+              <li><a href="#let" class="is-active"><i class="fab fa-html5"></i> HTML</a></li>
+            </ul>
+            <p class="menu-label">
+              More to read...
+            </p>
+            <ul class="menu-list">
+              <li><span class="tag is-white is-medium">Lorem</span></li>
+              <li><span class="tag is-white is-medium">Ipsum</span></li>
+              <li><span class="tag is-white is-medium">Dolor</span></li>
+              <li><span class="tag is-white is-medium">Animi</span></li>
+              <li><span class="tag is-white is-medium">Eximi</span></li>
+              <li><span class="tag is-white is-medium">Nullius</span></li>
+              <li><span class="tag is-white is-medium">Oxipi</span></li>
+              <li><span class="tag is-white is-medium">Vultus</span></li>
+              <li><span class="tag is-white is-medium">Voluptatis</span></li>
+              <li><span class="tag is-white is-medium">Exomarphis</span></li>
+              <li><span class="tag is-white is-medium">Finimi</span></li>
+              <li><span class="tag is-white is-medium">Aenigma</span></li>
+              <li><span class="tag is-white is-medium">Arkham</span></li>
+              <li><span class="tag is-white is-medium">Blue</span></li>
+              <li><span class="tag is-white is-medium">Medium</span></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="column is-9">
+          <div class="content is-medium">
+            <h3 class="title is-3">Snippets ¯\_(ツ)_/¯</h3>
+            <div class="box">
+              <b-button @click="">testdb</b-button>
+              <article class="message is-primary">
+                  <span class="icon has-text-primary">
+                  <i class="fab fa-js"></i>
+                  </span>
+                <div class="message-body">
+                  Block-scoped. Cannot be re-assigned. Not immutable.
+                </div>
+              </article>
+              <pre><code class="language-javascript">const test = 'test';</code></pre>
+            </div>
+            <div class="box">
+              <h4 id="let" class="title is-3">let</h4>
+              <article class="message is-primary">
+                <span class="icon has-text-primary">
+                  <i class="fas fa-info-circle"></i>
+                </span>
+                <div class="message-body">
+                  Block-scoped. Can be re-assigned.
+                </div>
+              </article>
+              <pre><code class="language-javascript">let i = 0;</code></pre>
+            </div>
+            <h3 class="title is-3">More to Come...</h3>
+            <div class="box">
+              <h4 id="lorem" class="title is-4">More to come...</h4>
+              <article class="message is-primary">
+              <span class="icon has-text-primary">
+                <i class="fas fa-info-circle"></i>
+              </span>
+                <div class="message-body">
+                  Lorem ipsum dolor sit amet, mea ne viderer veritus menandri, id scaevola gloriatur
+                  instructior sit.
+                </div>
+              </article>
+              <pre><code class="language-javascript">let i = 0;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   </div>
 </template>
 
 <script>
-const API_URL = 'http://localhost:4000/messages';
-
 export default {
-  name: 'home',
-  data: () => ({
-    error: '',
-    messages: [],
-    message: {
-      username: 'Enter a screen name',
-      subject: '',
-      message: '',
-      imageURL: '',
-    },
-  }),
-  computed: {
-    reversedMessages() {
-      return this.messages.slice().reverse();
-    },
-  },
-  mounted() {
-    fetch(API_URL)
-      .then((response) => response.json())
-      .then((result) => {
-        this.messages = result;
-      });
-  },
   methods: {
-    addMessage() {
-      console.log(this.message);
-      fetch(API_URL, {
-        method: 'POST',
-        body: JSON.stringify(this.message),
-        headers: {
-          'content-type': 'application/json',
-        },
-      })
-        .then((response) => response.json())
-        .then((result) => {
-          if (result.details) {
-            // there was an error...
-            const error = result.details
-              .map((detail) => detail.message)
-              .join('. ');
-            this.error = error;
-          } else {
-            this.error = '';
-            this.showMessageForm = false;
-            this.messages.push(result);
-          }
-        });
+    sayHello() {
+      this.$snackbar.open('Hey buefy is pretty!');
     },
   },
 };
 </script>
-
-<style>
-img {
-  max-width: 300px;
-  height: auto;
-}
-</style>

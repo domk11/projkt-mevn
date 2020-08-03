@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "buefy": "^0.8.20",
     "core-js": "^3.6.5",
     "joi": "^17.1.1",
     "monk": "^7.3.1",
